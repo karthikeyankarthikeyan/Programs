@@ -1,0 +1,32 @@
+class Student:
+   
+    def __init__(self,name,gender,city,DOB):
+        self.name = name
+        self.gender = gender
+        self.city = city
+        self.DOB = DOB
+        
+    @classmethod
+    def stu_data(cls,data):
+    	name,gender,city,DOB=data.split(",")
+    	return cls(name,gender,city,DOB)
+    @staticmethod
+    def job(year):
+    	avaiable_year=[2000,2003]
+    	if year in avaiable_year:
+    		return True
+    	return   False
+   	
+   
+stu1 = Student("Karthikeyan","Male","Madurai",2003)
+stu2 = Student("Sanjay","Male","Sivaganga",2002)
+
+data='Boomi,female,Kovai,1995'
+stu3=Student.stu_data(data)
+print(stu3.name)
+print(stu3.gender)
+print(stu3.city)
+print(stu3.DOB)
+print(stu1.job(2003))
+print(stu2.job(2002))
+
