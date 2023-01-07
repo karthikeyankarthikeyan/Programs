@@ -1,0 +1,24 @@
+class Sample_class():
+    roll_num = 2
+    def __init__(self,name,gender,dept,year):
+        self.name=name
+        self.gender=gender
+        self.dept=dept
+        self.year=year
+    def address(self):
+        addr=f"Name={self.name}\n Gender={self.gender}\n Dept={self.dept}\n Year={self.year}"
+        return addr
+    def new_roll_num(self,new):
+        self.roll_num=f"Can rollnum= {self.roll_num - new}"
+    def anotheraddress():
+        print("Im done basics")
+data1=Sample_class("KARTHIKEYAN"," male", "cse", 1)
+data2=Sample_class("KK","MALE","IT",3)
+data1.new_roll_num(5)
+data2.new_roll_num(9)
+
+print(data1.address())
+print(data2.address())
+print(data1.roll_num)
+print(data2.roll_num)
+Sample_class.anotheraddress()
