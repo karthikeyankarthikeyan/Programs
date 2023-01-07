@@ -1,0 +1,67 @@
+class Login:
+
+    user_ids = [{"email": "karthikeyan@gmail.com", "password": "karthi123"},
+                {"email": "sanjay@gmail.com", "password": "sanjay123"}]
+
+    def __init__(self,email,password):
+
+        self.email = email
+        self.password = password
+
+
+    def login(self):
+
+        log = [d for d in self.user_ids if d["email"] in email and d["password"] in password]
+        if log != []:
+            print("Logined Successfully:)")
+        else:
+            print("Invalid Email or Password:(")
+
+class Signup(Login):
+
+
+    def __init__(self,username ,email, password,confirm_pass):
+            super().__init__(email,password)
+            self.username = username
+            self.confirm_pass = confirm_pass
+
+    def signup(self):
+
+        if self.password == self.confirm_pass:
+
+            sign = [d for d in self.user_ids if d["email"] in email]
+
+            if sign != []:
+                print("****Account Already Exists****")
+
+            else:
+                new = {"Email":self.email,"Password":self.password}
+                self.user_ids.append(new)
+                print("Signed up Successfully :)")
+                print(self.user_ids)
+
+        else:
+            print("Password and Confirm Password are not same")
+
+
+answer = str(input("Login or Signup : "))
+
+if answer == "login":
+
+    email = input("Enter the Email Id : ")
+    password = input("Enter the password : ")
+    login_data = Login(email, password)
+    Login.login(login_data)
+
+elif answer == "signup":
+
+    username = input("Enter User Name : ")
+    email = input("Enter the Email Id : ")
+    password = input("Enter the password : ")
+    confirm_pass = input("Confirm password : ")
+    signup_data = Signup(username, email, password, confirm_pass)
+    Signup.signup(signup_data)
+
+else:
+
+    print("Invalid Input or try all letters in small")
